@@ -1,0 +1,6 @@
+.venv/
+venv/
+api_key/*
+req/
+*/__pycache__/
+*/*/__pycache__/
