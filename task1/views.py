@@ -1,21 +1,30 @@
 from django.shortcuts import render
 from django.http.response import HttpResponse, JsonResponse
 from .utils import create_and_upload_file
+import json
 
 def task1(request):
     #если данные пришли постом
     if request.method == 'POST':
         # забираем данные из тела запроса
-        mydata = request.POST
+        formdata = request.POST
         url_to_file = ''
         # есть ли в теле запроса есть нужные нам данные
-        if 'name' in mydata and 'data' in mydata:
+        if 'name' in formdata and 'data' in formdata:
             #создаем файл, копируем файл в google drive
-            create_and_upload_file(file_name=mydata['name'], file_content=mydata['data'])
-
+            create_and_upload_file(file_name=formdata['name'], file_content=formdata['data'])
         else:
-        #    return HttpResponse('<h2>Name and data required!</h2>')
-            return JsonResponse({'status': 'error', 'message': 'Name and data required!'})
+            # смотрим в raw
+            try:
+                db = request.body
+                db.decode()
+                rawData = json.loads(db)
+                if 'name' in rawData and 'data' in rawData:
+                    create_and_upload_file(file_name=rawData['name'], file_content=rawData['data'])
+                else:
+                    return JsonResponse({'status': 'error', 'message': 'Name and data required!'})
+            except Exception as e:
+                return JsonResponse({'status': 'error', 'message': 'body error'})
         #return HttpResponse('<h2>File created!</h2>')
         return JsonResponse({'status': 'success', 'message': f"file created {url_to_file}"})
     else:
