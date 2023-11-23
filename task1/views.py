@@ -21,5 +21,5 @@ def task1(request):
     else:
     # если данные пришли не постом
         #return HttpResponse('<h2>Sorry! <br> Only POST method allowed!</h2>')
-        create_and_upload_file(file_name='test.txt', file_content='testtest')
+        #create_and_upload_file(file_name='test.txt', file_content='testtest')
         return JsonResponse({'status': 'error', 'message': 'Sorry! Only Post method allowed!'})
