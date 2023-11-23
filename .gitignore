@@ -4,3 +4,5 @@ api_key/*
 req/
 */__pycache__/
 */*/__pycache__/
+core/__pycache__/
+task1/__pycache__/

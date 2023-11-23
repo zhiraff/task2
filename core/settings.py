@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0#j@1!7cnhg50-s!^i9+)8mco0c*!s)8@jp8&1-1tgg^-7ri=^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['zhiraph.fvds.ru']
 
 
 # Application definition
@@ -38,8 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'task1.apps.Task1Config',
-    'gdstorage'
+    'task1.apps.Task1Config'
 ]
 
 MIDDLEWARE = [
@@ -127,11 +126,5 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-#
-# Google Drive Storage Settings
-#
-
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = os.path.join(BASE_DIR, 'api_key') + '/pythontask-405309-5ec497402ca6.json'
-#GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE_CONTENTS = 'AIzaSyCfFBiEKH95wMe4-mCQhbU2JCONqpU923U'
-#os.environ['GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE_CONTENTS'] = 'AIzaSyCfFBiEKH95wMe4-mCQhbU2JCONqpU923U'
-GOOGLE_DRIVE_STORAGE_MEDIA_ROOT = 'pythontask' # OPTIONAL
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = None
+GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE_CONTENTS = 'AIzaSyCfFBiEKH95wMe4-mCQhbU2JCONqpU923U'
