@@ -6,3 +6,5 @@ req/
 */*/__pycache__/
 core/__pycache__/
 task1/__pycache__/
+client_secrets.jcon
+task1/client_secrets.json

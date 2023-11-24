@@ -19,7 +19,7 @@ from task1.views import task1
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('task1/', include('task1.urls'))
+    path('task1/', include('task1.urls')),
     # some aleshas try visit only root "/", so lets do it for them
     path('', task1)
 ]
