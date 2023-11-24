@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-0#j@1!7cnhg50-s!^i9+)8mco0c*!s)8@jp8&1-1tgg^-7ri=^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['zhiraph.fvds.ru']
+ALLOWED_HOSTS = ['zhiraph.fvds.ru', '62.109.18.71']
 
 
 # Application definition
@@ -126,5 +126,3 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE = None
-GOOGLE_DRIVE_STORAGE_JSON_KEY_FILE_CONTENTS = 'AIzaSyCfFBiEKH95wMe4-mCQhbU2JCONqpU923U'
